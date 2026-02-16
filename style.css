@@ -1,0 +1,72 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+/* SIATKA */
+.grid {
+  display: grid;
+  width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  gap: 30px;
+}
+
+/* KARTA */
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  max-width: 260px;
+  height: 350px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* PRZÓD */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TYŁ */
+.card-back {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.card-back h3 {
+  margin-bottom: 1px;
+}
+p {
+  font-size: 10px;
+}
