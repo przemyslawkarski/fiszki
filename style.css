@@ -9,7 +9,7 @@ body {
 /* SIATKA */
 .grid {
   display: grid;
-  width: 1200px;
+  width: 400px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
   gap: 30px;
@@ -69,4 +69,10 @@ body {
 }
 p {
   font-size: 10px;
+}
+
+@media (min-width: 992px) {
+  .grid {
+    width: 1200px;
+  }
 }
